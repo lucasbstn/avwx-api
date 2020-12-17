@@ -15,7 +15,7 @@ RUN useradd -m -r user && chown user /home/api
 
 # Add Tini for better signal handling and thread cleanup
 ENV TINI_VERSION v0.19.0
-ADD https://github.com/krallin/tini/releases/download/${TINI_VERSION}/tini /tini
+ADD --chown=user https://github.com/krallin/tini/releases/download/${TINI_VERSION}/tini /tini
 RUN chmod +x /tini
 ENTRYPOINT ["/tini", "--"]
 
