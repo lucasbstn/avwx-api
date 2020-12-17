@@ -2,7 +2,9 @@
 FROM python:3.8.6
 
 # Expose the default Quart port
-EXPOSE 8000
+EXPOSE 8080
+
+ENV PORT 8080
 
 # Set the main working directory
 WORKDIR /home/api
