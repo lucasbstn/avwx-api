@@ -16,8 +16,8 @@ from avwx_api import app
 
 @app.route("/")
 @app.route("/home")
-print(request)
 async def home() -> Response:
+    print(request)
     """
     Returns static home page
     """
