@@ -6,7 +6,7 @@ avwx_api.views - Routes and views for the Quart application
 # pylint: disable=W0702
 
 # library
-from quart import Response, jsonify
+from quart import Response, jsonify, request
 
 # module
 from avwx_api import app
@@ -15,6 +15,7 @@ from avwx_api import app
 
 
 @app.route("/")
+print request
 @app.route("/home")
 async def home() -> Response:
     """
