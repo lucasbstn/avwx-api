@@ -15,7 +15,7 @@ from avwx_api import app
 
 
 @app.route("/")
-print request
+print(request)
 @app.route("/home")
 async def home() -> Response:
     """
