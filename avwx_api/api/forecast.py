@@ -19,25 +19,25 @@ NBM_HANDLERS = {
 }
 
 
-@app.route("/api/gfs/<report_type>/<station>")
+@app.route("/weather/api/gfs/<report_type>/<station>")
 class GFS(Report):
     plan_types = PLANS
     handlers = GFS_HANDLERS
 
 
-@app.route("/api/parse/gfs/<report_type>")
+@app.route("/weather/api/parse/gfs/<report_type>")
 class GFSParse(Parse):
     plan_types = PLANS
     handlers = GFS_HANDLERS
 
 
-@app.route("/api/nbm/<report_type>/<station>")
+@app.route("/weather/api/nbm/<report_type>/<station>")
 class NBM(Report):
     plan_types = PLANS
     handlers = NBM_HANDLERS
 
 
-@app.route("/api/parse/nbm/<report_type>")
+@app.route("/weather/api/parse/nbm/<report_type>")
 class NBMParse(Parse):
     plan_types = PLANS
     handlers = NBM_HANDLERS

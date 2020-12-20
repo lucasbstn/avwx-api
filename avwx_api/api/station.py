@@ -24,7 +24,7 @@ async def get_station(station: "Station") -> dict:
     return asdict(station)
 
 
-@app.route("/api/station/<station>")
+@app.route("/weather/api/station/<station>")
 class Station(Base):
     """
     Returns station details for ICAO and coordinates
@@ -45,7 +45,7 @@ class Station(Base):
         return self.make_response(data, params.format)
 
 
-@app.route("/api/multi/station/<stations>")
+@app.route("/weather/api/multi/station/<stations>")
 class MultiStation(Base):
     """
     Returns station details for multiple ICAO idents
@@ -69,7 +69,7 @@ class MultiStation(Base):
         return self.make_response(data, params.format)
 
 
-@app.route("/api/station/near/<coord>")
+@app.route("/weather/api/station/near/<coord>")
 class Near(Base):
     """
     Returns stations near a coordinate pair
@@ -99,7 +99,7 @@ class Near(Base):
         return self.make_response(stations, params.format)
 
 
-@app.route("/api/station/list")
+@app.route("/weather/api/station/list")
 class StationList(Base):
     """
     Returns the current list of reporting stations

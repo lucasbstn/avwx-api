@@ -14,10 +14,9 @@ from avwx_api import app
 # Static Web Pages
 
 
-@app.route("/")
-@app.route("/home")
+@app.route("/weather/")
+@app.route("/weather/home")
 async def home() -> Response:
-    print(request)
     """
     Returns static home page
     """
@@ -27,7 +26,7 @@ async def home() -> Response:
 # API Routing Errors
 
 
-@app.route("/api")
+@app.route("/weather/api")
 async def no_report() -> Response:
     """
     Returns no report msg
@@ -35,8 +34,8 @@ async def no_report() -> Response:
     return jsonify({"error": "No report type given"}), 400
 
 
-@app.route("/api/metar")
-@app.route("/api/taf")
+@app.route("/weather/api/metar")
+@app.route("/weather/api/taf")
 async def no_station() -> Response:
     """
     Returns no station msg

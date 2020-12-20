@@ -12,7 +12,7 @@ from avwx_api.api.base import Report, Parse, MultiReport
 ## METAR
 
 
-@app.route("/api/metar/<station>")
+@app.route("/weather/api/metar/<station>")
 class MetarFetch(Report):
     report_type = "metar"
     handler = handle.MetarHandler
@@ -20,7 +20,7 @@ class MetarFetch(Report):
     _key_remv = ("top",)
 
 
-@app.route("/api/parse/metar")
+@app.route("/weather/api/parse/metar")
 class MetarParse(Parse):
     report_type = "metar"
     handler = handle.MetarHandler
@@ -28,7 +28,7 @@ class MetarParse(Parse):
     _key_remv = ("top",)
 
 
-@app.route("/api/multi/metar/<stations>")
+@app.route("/weather/api/multi/metar/<stations>")
 class MetarMulti(MultiReport):
     report_type = "metar"
     handler = handle.MetarHandler
@@ -40,7 +40,7 @@ class MetarMulti(MultiReport):
 ## TAF
 
 
-@app.route("/api/taf/<station>")
+@app.route("/weather/api/taf/<station>")
 class TafFetch(Report):
     report_type = "taf"
     handler = handle.TafHandler
@@ -48,7 +48,7 @@ class TafFetch(Report):
     _key_remv = ("top",)
 
 
-@app.route("/api/parse/taf")
+@app.route("/weather/api/parse/taf")
 class TafParse(Parse):
     report_type = "taf"
     handler = handle.TafHandler
@@ -56,7 +56,7 @@ class TafParse(Parse):
     _key_remv = ("top",)
 
 
-@app.route("/api/multi/taf/<stations>")
+@app.route("/weather/api/multi/taf/<stations>")
 class TafMulti(MultiReport):
     report_type = "taf"
     handler = handle.TafHandler
@@ -68,7 +68,7 @@ class TafMulti(MultiReport):
 ## PIREP
 
 
-@app.route("/api/pirep/<location>")
+@app.route("/weather/api/pirep/<location>")
 class PirepFetch(Report):
     report_type = "pirep"
     loc_param = "location"
@@ -79,7 +79,7 @@ class PirepFetch(Report):
     _key_remv = ("direction",)
 
 
-@app.route("/api/parse/pirep")
+@app.route("/weather/api/parse/pirep")
 class PirepParse(Parse):
     report_type = "pirep"
     loc_param = "location"

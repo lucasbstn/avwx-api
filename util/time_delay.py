@@ -27,7 +27,7 @@ def from_api(icao: str) -> str:
     Returns the timestamp fetched from the API
     """
     # NOTE: Disable token auth with prod cache
-    data = httpx.get("http://localhost:8000/api/metar/" + icao).json()
+    data = httpx.get("http://localhost:8000/weather/api/metar/" + icao).json()
     return data["time"]["repr"]
 
 
